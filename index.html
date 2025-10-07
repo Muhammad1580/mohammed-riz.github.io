@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>محمد مصطفى - بورتفوليو</title>
+  <meta name="description" content="بورتفوليو Mohamed Mostafa Abdel-Khalik - Document Controller & Planning Coordinator" />
+  <style>
+    /* ====== Root & Fonts ====== */
+    :root{
+      --bg:#0f1724;
+      --card:#111827;
+      --muted:#94a3b8;
+      --accent:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --text:#e6eef6;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:linear-gradient(180deg,#071126 0%, #071b2a 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:20px;
+    }
+
+    /* ====== Container ====== */
+    .container{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    /* ====== Header / Nav ====== */
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      color:#042331;
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    }
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    /* nav */
+    .nav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .btn{
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.04);
+      padding:8px 12px;
+      border-radius:10px;
+      cursor:pointer;
+      color:var(--text);
+      text-decoration:none;
+      font-size:14px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .btn:hover{transform:translateY(-3px); transition:all .18s ease}
+
+    /* mobile menu button */
+    .menu-toggle{display:none;border:0;background:transparent;color:var(--text);font-size:22px;cursor:pointer}
+
+    /* ====== Main card ====== */
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    /* profile image area */
+    .profile{
+      text-align:center;
+    }
+    .avatar{
+      width:150px;
+      height:150px;
+      border-radius:16px;
+      background:linear-gradient(180deg,#0f1724 0%, #0b2b35 100%);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .small-info{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* details */
+    .details h2{margin:0 0 6px 0;font-size:20px}
+    .details p{margin:4px 0;color:var(--muted);font-size:14px}
+    .contact-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{background:rgba(255,255,255,0.03); padding:8px 10px;border-radius:10px;font-size:13px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* ====== Projects section ====== */
+    .section{
+      margin-top:18px;
+    }
+    .section h3{margin:0 0 10px 0}
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border-radius:12px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .project:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    .project h4{margin:0 0 6px 0;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+    .project .meta{margin-top:8px;font-size:12px;color:var(--muted)}
+
+    /* CTA / About */
+    .about{
+      margin-top:12px;
+      background:rgba(255,255,255,0.02);
+      padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)
+    }
+
+    /* footer contact area */
+    .footer{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .socials{display:flex;gap:8px;align-items:center}
+
+    /* responsive */
+    @media (max-width:800px){
+      .card{grid-template-columns:1fr; padding:14px}
+      .projects{grid-template-columns:1fr}
+      .logo{width:52px;height:52px;font-size:16px}
+      .menu-toggle{display:inline-block}
+      .nav{display:none}
+      .nav.open{display:flex;flex-direction:column;background:rgba(0,0,0,0.25);position:absolute;right:20px;top:72px;padding:10px;border-radius:8px}
+    }
+
+    /* small helper */
+    .muted{color:var(--muted)}
+    a.link{color:var(--accent); text-decoration:none}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="brand" aria-label="Brand">
+        <div class="logo" title="MM">MM</div>
+        <div>
+          <h1>Mohamed Mostafa Abdel-Khalik</h1>
+          <p class="muted">Document Controller & Planning Coordinator</p>
+        </div>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="nav" aria-label="Main navigation">
+        <a class="btn" href="#projects" title="المشاريع">المشاريع</a>
+        <a class="btn" href="#about" title="نبذة">نبذة</a>
+        <a id="gmailBtn" class="btn" href="mailto:muhammadmostafa1580@gmail.com" title="Send email">
+          📧 Gmail
+        </a>
+        <!-- Replace the LinkedIn URL below with your actual profile link -->
+        <a id="linkedinBtn" class="btn" href="https://www.linkedin.com/in/replace-with-your-profile" target="_blank" rel="noopener" title="LinkedIn">
+          🔗 LinkedIn
+        </a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">☰</button>
+      <nav class="nav" id="mobileNav" aria-hidden="true"></nav>
+    </header>
+
+    <!-- Main content card -->
+    <main class="card" role="main" aria-labelledby="mainTitle">
+      <!-- Left: profile -->
+      <aside class="profile" aria-label="Profile">
+        <!-- Avatar: replace src with your image filename or URL -->
+        <div class="avatar" id="avatar">
+          <img src="https://via.placeholder.com/300x300.png?text=Your+Photo" alt="صورة الملف الشخصي - Mohamed Mostafa" id="profileImage">
+        </div>
+        <div class="small-info">
+          <div>تاريخ الميلاد: 15 أغسطس 1997</div>
+          <div>الحالة العسكرية: منتهية</div>
+        </div>
+
+        <!-- quick contact chips -->
+        <div style="margin-top:12px" class="contact-list" aria-label="Contact quick links">
+          <a class="chip" href="tel:01129231117">📱 01129231117</a>
+          <a class="chip" href="mailto:muhammadmostafa1580@gmail.com">✉️ muhammadmostafa1580@gmail.com</a>
+          <a class="chip" id="linkedinChip" href="https://www.linkedin.com/in/replace-with-your-profile" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </aside>
+
+      <!-- Right: details -->
+      <section class="details" aria-labelledby="mainTitle">
+        <h2 id="mainTitle">Mohamed Mostafa Abdel-Khalik</h2>
+        <p class="muted">Highly organized Document Controller with 3+ years of experience in engineering and real estate sectors. Skilled in documentation systems, project coordination, and data analysis.</p>
+
+        <!-- About / short CV -->
+        <div class="about" id="about">
+          <strong>Education:</strong>
+          <div class="muted">Bachelor of Commerce, Al-Azhar University (2019) — Business Administration</div>
+          <hr style="opacity:.06;margin:10px 0">
+          <strong>Work experience (مختصر):</strong>
+          <div class="muted" style="font-size:13px;margin-top:6px">
+            Planning coordinator & Document Controller — Jawda Engineering Consultant (2024–Now)<br>
+            Document Controller — CCG – Consomity Group (Mar 2024 – Nov 2024)<br>
+            Document Controller — Modern Controls M.E.P (Dec 2023 – Mar 2024)<br>
+            Document Controller — EMC-Electromechanical Consultants (Jul 2021 – Dec 2023)
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section" id="projects" aria-labelledby="projectsTitle">
+          <h3 id="projectsTitle">المشاريع / Projects</h3>
+          <div class="projects" id="projectsGrid">
+            <!-- Example project cards: replace or add projects as needed -->
+            <article class="project" tabindex="0">
+              <h4>Project Tracker Dashboard</h4>
+              <p>Power BI dashboard to monitor engineer performance & submission timelines across 20+ projects.</p>
+              <div class="meta muted">Tech: Excel, Power BI — Role: Data & Dashboard</div>
+            </article>
+
+            <article class="project" tabindex="0">
+              <h4>Document Control System</h4>
+              <p>Structured file naming, archiving, and transmittal templates for multi-discipline engineering projects.</p>
+              <div class="meta muted">Tech: MS Office, SharePoint (templates) — Role: Document Controller</div>
+            </article>
+
+            <article class="project" tabindex="0">
+              <h4>Social Media Campaign</h4>
+              <p>Managed content and ads remotely; performed engagement analysis and performance reporting.</p>
+              <div class="meta muted">Tech: Meta Ads, Analytics — Role: Social Media Specialist</div>
+            </article>
+
+            <article class="project" tabindex="0">
+              <h4>Procurement Submittal Tracking</h4>
+              <p>Excel master tracker for procurement items, approvals, and delivery status to reduce delays.</p>
+              <div class="meta muted">Tech: Excel — Role: Planner / Coordinator</div>
+            </article>
+          </div>
+
+          <!-- Add project button for quick editing locally -->
+          <div style="margin-top:10px">
+            <button class="btn" id="addProjBtn" title="Add sample project">＋ إضافة مشروع تجريبي</button>
+          </div>
+        </div>
+
+        <!-- Footer contact -->
+        <div class="footer">
+          <div>
+            <div style="font-weight:600">تواصل</div>
+            <div class="muted">الهاتف: 01129231117 • الإيميل: <a class="link" href="mailto:muhammadmostafa1580@gmail.com">muhammadmostafa1580@gmail.com</a></div>
+          </div>
+
+          <div class="socials">
+            <a class="btn" href="mailto:muhammadmostafa1580@gmail.com" id="gmailFooter">📧 إرسال إيميل</a>
+            <a class="btn" href="https://www.linkedin.com/in/replace-with-your-profile" id="linkedinFooter" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Small note / instructions for editing -->
+    <div style="margin-top:14px;color:var(--muted);font-size:13px">
+      <strong>ملاحظة لتعديل سريع:</strong> لتغيير صورة البروفايل: استبدل قيمة الـ <code>src</code> في &lt;img id="profileImage"&gt; برابط الصورة أو اسم الملف. لتغيير لينكدإن قم بتعديل جميع الروابط التي تحتوي على <code>replace-with-your-profile</code>.
+    </div>
+  </div>
+
+  <!-- ====== Inline JavaScript ====== -->
+  <script>
+    /* ======= Mobile nav toggle ======= */
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle.addEventListener('click', () => {
+      const open = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!open));
+      mobileNav.innerHTML = ''; // rebuild
+      if(!open){
+        // populate mobile nav (same links)
+        const links = [
+          {txt:'المشاريع', href:'#projects'},
+          {txt:'نبذة', href:'#about'},
+          {txt:'Gmail', href:'mailto:muhammadmostafa1580@gmail.com'},
+          {txt:'LinkedIn', href:'https://www.linkedin.com/in/replace-with-your-profile'}
+        ];
+        links.forEach(l => {
+          const a = document.createElement('a');
+          a.className = 'btn';
+          a.style.display = 'block';
+          a.style.marginBottom = '6px';
+          a.href = l.href;
+          a.target = (l.href.startsWith('http')) ? '_blank' : '_self';
+          a.rel = (l.href.startsWith('http')) ? 'noopener' : '';
+          a.textContent = l.txt;
+          mobileNav.appendChild(a);
+        });
+        mobileNav.classList.add('open');
+        mobileNav.setAttribute('aria-hidden','false');
+      } else {
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden','true');
+      }
+    });
+
+    /* ======= Add project (sample) ======= */
+    document.getElementById('addProjBtn').addEventListener('click', () => {
+      const grid = document.getElementById('projectsGrid');
+      const card = document.createElement('article');
+      card.className = 'project';
+      card.setAttribute('tabindex','0');
+      card.innerHTML = '<h4>مشروع جديد</h4><p>وصف مختصر للمشروع. عدل هذا المحتوى من الملف HTML مباشرة.</p><div class="meta muted">Tech: Excel, Power BI</div>';
+      grid.appendChild(card);
+      // small focus effect
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+      card.animate([{transform:'translateY(6px)'},{transform:'translateY(0)'}],{duration:250});
+    });
+
+    /* ======= Small accessibility helpers ======= */
+    // Open mailto in a new window to avoid losing page on some mobile browsers
+    const gmailBtns = [document.getElementById('gmailBtn'), document.getElementById('gmailFooter')];
+    gmailBtns.forEach(b => {
+      if(!b) return;
+      b.addEventListener('click', (e) => {
+        // mailto default behavior is fine; we keep it but also try to open via window.location for mobile
+        // no preventDefault intentionally.
+      });
+    });
+
+    // Keyboard support: project cards lift on focus
+    document.querySelectorAll('.project').forEach(p => {
+      p.addEventListener('focus', () => p.style.boxShadow = '0 12px 30px rgba(2,6,23,0.6)');
+      p.addEventListener('blur', () => p.style.boxShadow = '');
+    });
+
+    /* ======= Small improvement points (comments only) =======
+      - Replace placeholder LinkedIn URLs with your real profile.
+      - Replace profileImage src with your photo file (use square image 600x600 recommended).
+      - Add/modify the project cards inside the <div id="projectsGrid"> for your real projects.
+      - If you want to host this, you can simply upload this single file to any static host (GitHub Pages, Netlify).
+    ======================================================== */
+  </script>
+</body>
+</html>
+
+
