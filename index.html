@@ -5,22 +5,75 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mohamed Mostafa — Portfolio</title>
   <meta name="description" content="Mohamed Mostafa Abdel-Khalik — Document Controller & Planning Coordinator" />
-  <!-- Fonts: Poppins for EN, Cairo as Arabic fallback (loaded via Google fonts) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     /* ================== Theme (Light: Gold & Beige) ================== */
-    :root{
-      --bg:#f7f4ef;            /* beige background */
-      --card:#ffffff;          /* white card */
-      --muted:#7b6f65;         /* muted brown */
-      --text:#2b2a28;          /* primary text */
-      --gold:#b8873a;          /* primary gold */
-      --gold-2:#d4af6f;        /* light gold */
-      --accent:#f0e9df;        /* soft accent */
+    :root {
+      --bg:#f7f4ef;
+      --card:#ffffff;
+      --muted:#7b6f65;
+      --text:#2b2a28;
+      --gold:#b8873a;
+      --gold-2:#d4af6f;
+      --accent:#f0e9df;
       --glass: rgba(40,30,20,0.04);
       --radius:14px;
       --shadow: 0 10px 30px rgba(38,33,30,0.08);
       --maxw:1100px;
+    }
+
+    body {
+      font-family: 'Poppins', 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 60px auto;
+      padding: 20px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    /* ===== Profile Image ===== */
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 3px solid var(--gold-2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="profile.jpg" alt="Mohamed Mostafa" class="profile-photo">
+    <h1>Mohamed Mostafa</h1>
+    <p>Document Controller & Planning Coordinator</p>
+  </div>
+</body>
+</html>
+
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -364,3 +417,4 @@
   </script>
 </body>
 </html>
+
