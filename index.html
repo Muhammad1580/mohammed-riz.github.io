@@ -1,248 +1,364 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mohamed Mostafa — Portfolio</title>
-  <meta name="description" content="Mohamed Mostafa Abdel-Khalik — Document Controller & Planning Coordinator" />
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#f7f4ef;
-      --card:#ffffff;
-      --muted:#7b6f65;
-      --text:#2b2a28;
-      --gold:#b8873a;
-      --gold-2:#d4af6f;
-      --accent:#f0e9df;
-      --glass: rgba(40,30,20,0.04);
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(38,33,30,0.08);
-      --maxw:1100px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mohamed Mostafa — Portfolio</title>
+<meta name="description" content="Mohamed Mostafa Abdel-Khalik — Document Controller & Planning Coordinator" />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f7f4ef;
+  --card:#ffffff;
+  --muted:#7b6f65;
+  --text:#2b2a28;
+  --gold:#b8873a;
+  --gold-2:#d4af6f;
+  --accent:#f0e9df;
+  --glass: rgba(40,30,20,0.04);
+  --radius:14px;
+  --shadow: 0 8px 24px rgba(38,33,30,0.08);
+  --maxw:1100px;
+}
 
-    body {
-      font-family: 'Poppins', 'Cairo', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 30px 18px;
-      line-height:1.5;
-    }
+*{box-sizing:border-box;}
+body{
+  font-family: 'Poppins', 'Cairo', sans-serif;
+  margin:0;
+  padding:30px 18px;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+.container{max-width:var(--maxw);margin:0 auto;}
+header.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-bottom:30px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo{
+  width:60px;
+  height:60px;
+  border-radius:12px;
+  background: linear-gradient(135deg,var(--gold),var(--gold-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  font-size:20px;
+  box-shadow:0 6px 18px rgba(168,130,66,0.18);
+}
+.brand h1{margin:0;font-size:20px;}
+.brand p{margin:0;font-size:13px;color:var(--muted);}
+nav.top-nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid rgba(38,33,30,0.06);
+  background:#fff;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  box-shadow: var(--shadow);
+  transition: all 0.2s;
+}
+.btn:hover{transform: translateY(-2px);box-shadow:0 10px 26px rgba(38,33,30,0.12);}
+.btn.primary{
+  background: linear-gradient(180deg,var(--gold),var(--gold-2));
+  color:#fff;
+  border:none;
+  box-shadow:0 10px 30px rgba(168,130,66,0.18);
+}
 
-    .container { max-width: var(--maxw); margin:0 auto; }
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:24px;
+  background: var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  align-items:start;
+}
 
-    header.site-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      margin-bottom:22px;
-    }
-    .brand{display:flex; gap:14px; align-items:center;}
-    .logo{
-      width:68px; height:68px; border-radius:12px;
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
-      display:flex; align-items:center; justify-content:center;
-      color:white; font-weight:700; font-size:20px;
-      box-shadow:0 6px 18px rgba(168,130,66,0.18);
-    }
-    .brand h1{margin:0;font-size:20px}
-    .brand p{margin:0;font-size:13px;color:var(--muted)}
+/* PROFILE COLUMN */
+.profile{
+  text-align:center;
+}
+.avatar{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 auto 12px;
+  border:5px solid #fff;
+  box-shadow:0 10px 28px rgba(38,33,30,0.06);
+  background: linear-gradient(180deg,var(--accent),#fff);
+}
+.avatar img{
+  width:100%; height:100%; object-fit:cover;
+}
+.contact-chips{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:14px;
+}
+.chip{
+  padding:10px;
+  border-radius:10px;
+  background:var(--glass);
+  font-size:14px;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(0,0,0,0.03);
+}
 
-    nav.top-nav{display:flex; gap:10px; align-items:center}
-    .btn{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:10px 14px; border-radius:10px; border:1px solid rgba(38,33,30,0.06);
-      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,244,239,0.9));
-      color:var(--text); text-decoration:none; font-weight:600; font-size:14px;
-      box-shadow:var(--shadow);
-    }
-    .btn.primary{
-      background:linear-gradient(180deg,var(--gold),var(--gold-2));
-      color:#fff; border:none; box-shadow:0 10px 30px rgba(168,130,66,0.18);
-    }
+/* DETAILS COLUMN */
+.details h2{margin:0;font-size:22px;}
+.details p.lead{color:var(--muted);margin:12px 0;font-size:14px;}
+.meta-list{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.meta{
+  background:#fff;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(38,33,30,0.04);
+  font-size:13px;
+  color:var(--muted);
+}
 
-    .hero{display:grid; grid-template-columns:260px 1fr; gap:20px; background:var(--card); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow); align-items:start;}
-    .profile{text-align:center;}
-    .avatar img{
-      width:200px;height:200px;border-radius:18px;overflow:hidden;border:6px solid #fff;
-      box-shadow:0 12px 30px rgba(38,33,30,0.06);
-      margin:0 auto 12px; display:block;
-    }
-    .contact-chips{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-    .chip{padding:10px;border-radius:10px;background:var(--glass);font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.03)}
+/* SECTIONS */
+section.sec{margin-top:22px;}
+.sec h3{margin:0 0 14px 0;font-size:18px;color:var(--text);}
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.card-item{
+  border-radius:12px;
+  padding:16px;
+  background:#fff;
+  box-shadow:0 8px 22px rgba(38,33,30,0.04);
+  border:1px solid rgba(0,0,0,0.03);
+  transition:all 0.2s;
+}
+.card-item:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(38,33,30,0.08);}
+.card-item h4{margin:0 0 6px;font-size:16px;}
+.card-item p{margin:0;color:var(--muted);font-size:13px;}
+.tech{margin-top:10px;font-size:12px;color:var(--muted);}
 
-    .details h2{margin:0;font-size:22px}
-    .details p.lead{color:var(--muted);margin:8px 0 14px;font-size:14px}
-    .meta-list{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-    .meta{background:linear-gradient(180deg, #fff,#fbf7f1);padding:8px 10px;border-radius:10px;border:1px solid rgba(38,33,30,0.04);font-size:13px;color:var(--muted)}
+/* Skills */
+.skills{display:flex;flex-wrap:wrap;gap:10px;}
+.skill{
+  padding:8px 10px;
+  border-radius:10px;
+  background:#fff;
+  font-size:13px;
+  border:1px solid rgba(0,0,0,0.03);
+  color:var(--muted);
+}
 
-    section.sec{margin-top:18px}
-    .sec h3{margin:0 0 12px 0;font-size:18px;color:var(--text)}
-    .projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-    .card-item{border-radius:12px; padding:14px; background:linear-gradient(180deg,#fff,#faf6f0); box-shadow:0 8px 22px rgba(38,33,30,0.04); border:1px solid rgba(0,0,0,0.03);}
-    .card-item h4{margin:0 0 6px;font-size:16px}
-    .card-item p{margin:0;color:var(--muted);font-size:13px}
-    .tech{margin-top:10px;font-size:12px;color:var(--muted)}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{padding:8px 10px;border-radius:10px;background:linear-gradient(180deg,#fff,#faf6f0);font-size:13px;border:1px solid rgba(0,0,0,0.03);color:var(--muted)}
-    .contact-card{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#faf6f0);border:1px solid rgba(0,0,0,0.03)}
-    .field{display:flex;flex-direction:column;gap:6px}
-    label{font-size:13px;color:var(--muted)}
-    input[type="text"], textarea{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-size:14px;background:transparent;color:var(--text)}
-    textarea{min-height:110px;resize:vertical}
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+/* Contact form */
+.contact-card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:16px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.03);
+  box-shadow:0 6px 18px rgba(38,33,30,0.06);
+}
+.field{display:flex;flex-direction:column;gap:6px;}
+label{font-size:13px;color:var(--muted);}
+input[type="text"], textarea{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  font-size:14px;
+  background:transparent;
+  color:var(--text);
+}
+textarea{min-height:110px;resize:vertical;}
 
-    @media (max-width:900px){.hero{grid-template-columns:1fr; padding:16px}.projects-grid{grid-template-columns:1fr}.avatar img{width:160px;height:160px}nav.top-nav{display:none}}
-    @media (max-width:560px){body{padding:18px 12px}.logo{width:56px;height:56px}}
-    a.link{color:var(--gold);text-decoration:none;font-weight:600}
-    .muted{color:var(--muted)}
-  </style>
+/* Footer */
+footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr; padding:18px;}
+  .projects-grid{grid-template-columns:1fr;}
+  .avatar{width:160px;height:160px;}
+  nav.top-nav{display:none;}
+}
+@media (max-width:560px){
+  body{padding:18px 12px;}
+  .logo{width:56px;height:56px;}
+}
+.muted{color:var(--muted);}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">MM</div>
-        <div>
-          <h1>Mohamed Mostafa Abdel-Khalik</h1>
-          <p>Document Controller • Planning Coordinator</p>
-        </div>
+<div class="container">
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">MM</div>
+      <div>
+        <h1>Mohamed Mostafa Abdel-Khalik</h1>
+        <p>Document Controller • Planning Coordinator</p>
       </div>
-      <nav class="top-nav">
-        <a class="btn" href="#about">About</a>
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#skills">Skills</a>
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Gmail</a>
-        <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
-      </nav>
-    </header>
+    </div>
+    <nav class="top-nav">
+      <a class="btn" href="#about">About</a>
+      <a class="btn" href="#projects">Projects</a>
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#contact">Contact</a>
+      <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Gmail</a>
+      <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
+    </nav>
+  </header>
 
-    <main class="hero">
-      <aside class="profile">
-        <div class="avatar">
-          <img src="profile.jpg" alt="Mohamed Mostafa">
+  <main class="hero">
+    <aside class="profile">
+      <div class="avatar">
+        <img src="profile.jpg" alt="Mohamed Mostafa">
+      </div>
+      <div style="margin-top:12px;font-weight:600;font-size:15px">Mohamed Mostafa</div>
+      <div class="muted" style="font-size:13px">Document Controller • Planning Coordinator</div>
+      <div class="contact-chips">
+        <a class="chip" href="tel:01129231117">📞 +20 01129231117</a>
+        <a class="chip" href="mailto:muhammadmostafa1580@gmail.com">✉️ muhammadmostafa1580@gmail.com</a>
+        <a class="chip" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
+        <div class="chip">DOB: Aug 15, 1997</div>
+      </div>
+    </aside>
+
+    <section class="details">
+      <h2>Professional Summary</h2>
+      <p class="lead">Highly organized Document Controller with 3+ years’ experience in engineering and real estate. Skilled in documentation systems, project coordination, Excel & Power BI dashboards, and ensuring timely document flow across multidisciplinary teams.</p>
+      <div class="meta-list">
+        <div class="meta">Education: B.Com — Al-Azhar University (2019)</div>
+        <div class="meta">Languages: English (Good) • Arabic (Native)</div>
+        <div class="meta">Location: Egypt</div>
+      </div>
+
+      <section id="about" class="sec">
+        <h3>About</h3>
+        <div class="card-item">
+          <p class="muted">I work across project teams to maintain accurate document archives, prepare submission trackers, and produce dashboard reports that help managers meet deadlines and avoid cost risks. I enjoy turning chaotic paperwork into reliable systems.</p>
         </div>
-        <div style="margin-top:12px">
-          <div style="font-weight:600">Mohamed Mostafa</div>
-          <div class="muted" style="font-size:13px">Document Controller • Planning Coordinator</div>
-        </div>
-        <div class="contact-chips" style="margin-top:14px">
-          <a class="chip" href="tel:01129231117">📞 +20 01129231117</a>
-          <a class="chip" href="mailto:muhammadmostafa1580@gmail.com">✉️ muhammadmostafa1580@gmail.com</a>
-          <a class="chip" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
-          <div class="chip">DOB: Aug 15, 1997</div>
-        </div>
-      </aside>
-
-      <section class="details">
-        <h2>Professional Summary</h2>
-        <p class="lead">Highly organized Document Controller with 3+ years’ experience in engineering and real estate. Skilled in documentation systems, project coordination, Excel & Power BI dashboards, and ensuring timely document flow across multidisciplinary teams.</p>
-        <div class="meta-list">
-          <div class="meta">Education: B.Com — Al-Azhar University (2019)</div>
-          <div class="meta">Languages: English (Good) • Arabic (Native)</div>
-          <div class="meta">Location: Egypt</div>
-        </div>
-
-        <section id="about" class="sec">
-          <h3>About</h3>
-          <div class="card-item">
-            <p class="muted">I work across project teams to maintain accurate document archives, prepare submission trackers, and produce dashboard reports that help managers meet deadlines and avoid cost risks. I enjoy turning chaotic paperwork into reliable systems.</p>
-          </div>
-        </section>
-
-        <section id="projects" class="sec">
-          <h3>Selected Projects</h3>
-          <div class="projects-grid">
-            <article class="card-item">
-              <h4>Project Tracker Dashboard</h4>
-              <p>Designed Excel + Power BI dashboard to monitor engineer performance, submittal timelines and project progress across 20+ projects.</p>
-              <div class="tech">Excel • Power BI • DAX</div>
-            </article>
-            <article class="card-item">
-              <h4>Document Control System</h4>
-              <p>Developed filing structure, templates and transmittal procedures to standardize document flow between consultants and contractors.</p>
-              <div class="tech">MS Office • SharePoint</div>
-            </article>
-            <article class="card-item">
-              <h4>Procurement Submittal Tracker</h4>
-              <p>Created master procurement tracker to reduce delivery delays and track approvals for materials and shop drawings.</p>
-              <div class="tech">Excel • Reporting</div>
-            </article>
-            <article class="card-item">
-              <h4>Social Media Reporting</h4>
-              <p>Managed content and ad campaigns remotely, producing engagement and performance reports for stakeholders.</p>
-              <div class="tech">Analytics • Meta Ads</div>
-            </article>
-          </div>
-        </section>
-
-        <section id="skills" class="sec">
-          <h3>Skills</h3>
-          <div class="card-item">
-            <div class="skills">
-              <div class="skill">Document Management</div>
-              <div class="skill">Project Coordination</div>
-              <div class="skill">Excel (Advanced)</div>
-              <div class="skill">Power BI & DAX</div>
-              <div class="skill">Reporting & Analysis</div>
-              <div class="skill">MS Office / SharePoint</div>
-              <div class="skill">Arabic & English</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="sec">
-          <h3>Contact</h3>
-          <div class="card-item contact-card">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <a class="btn" href="tel:01129231117">📞 Call</a>
-              <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Email</a>
-              <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
-            </div>
-            <div class="muted" style="font-size:13px;margin-top:6px">Or send a quick message:</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-              <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
-              <div class="field"><label for="email">Email</label><input id="email" type="text" placeholder="your@mail.com"></div>
-            </div>
-            <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Short message..."></textarea></div>
-            <div style="display:flex;gap:10px;justify-content:flex-end">
-              <button class="btn" id="previewBtn">Preview</button>
-              <button class="btn primary" id="sendMailBtn">Send via Email</button>
-            </div>
-          </div>
-        </section>
       </section>
-    </main>
 
-    <footer>
-      <div>© <strong>Mohamed Mostafa</strong> — Document Control & Planning. <span class="muted">Built as single-file portfolio</span></div>
-    </footer>
-  </div>
+      <section id="projects" class="sec">
+        <h3>Selected Projects</h3>
+        <div class="projects-grid">
+          <div class="card-item">
+            <h4>Project Tracker Dashboard</h4>
+            <p>Designed Excel + Power BI dashboard to monitor engineer performance, submittal timelines and project progress across 20+ projects.</p>
+            <div class="tech">Excel • Power BI • DAX</div>
+          </div>
+          <div class="card-item">
+            <h4>Document Control System</h4>
+            <p>Developed filing structure, templates and transmittal procedures to standardize document flow between consultants and contractors.</p>
+            <div class="tech">MS Office • SharePoint</div>
+          </div>
+          <div class="card-item">
+            <h4>Procurement Submittal Tracker</h4>
+            <p>Created master procurement tracker to reduce delivery delays and track approvals for materials and shop drawings.</p>
+            <div class="tech">Excel • Reporting</div>
+          </div>
+          <div class="card-item">
+            <h4>Social Media Reporting</h4>
+            <p>Managed content and ad campaigns remotely, producing engagement and performance reports for stakeholders.</p>
+            <div class="tech">Analytics • Meta Ads</div>
+          </div>
+        </div>
+      </section>
 
-  <script>
-    const sendBtn = document.getElementById('sendMailBtn');
-    sendBtn.addEventListener('click', () => {
-      const name = document.getElementById('name').value.trim();
-      const from = document.getElementById('email').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      const subject = encodeURIComponent(name ? `Contact from ${name}` : 'Contact from Portfolio');
-      let body = '';
-      if (from) body += `Reply to: ${from}\n\n`;
-      if (msg) body += msg;
-      const mailto = `mailto:muhammadmostafa1580@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
+      <section id="skills" class="sec">
+        <h3>Skills</h3>
+        <div class="card-item">
+          <div class="skills">
+            <div class="skill">Document Management</div>
+            <div class="skill">Project Coordination</div>
+            <div class="skill">Excel (Advanced)</div>
+            <div class="skill">Power BI & DAX</div>
+            <div class="skill">Reporting & Analysis</div>
+            <div class="skill">MS Office / SharePoint</div>
+            <div class="skill">Arabic & English</div>
+          </div>
+        </div>
+      </section>
 
-    document.getElementById('previewBtn').addEventListener('click', () => {
-      const name = document.getElementById('name').value.trim() || '(No name)';
-      const from = document.getElementById('email').value.trim() || '(No email)';
-      const msg = document.getElementById('message').value.trim() || '(No message)';
-      alert(`Preview:\nName: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`);
-    });
-  </script>
+      <section id="contact" class="sec">
+        <h3>Contact</h3>
+        <div class="card-item contact-card">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn" href="tel:01129231117">📞 Call</a>
+            <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Email</a>
+            <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
+          </div>
+          <div class="muted" style="font-size:13px;margin-top:6px">Or send a quick message:</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="text" placeholder="your@mail.com"></div>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Short message..."></textarea></div>
+          <div style="display:flex;gap:10px;justify-content:flex-end">
+            <button class="btn" id="previewBtn">Preview</button>
+            <button class="btn primary" id="sendMailBtn">Send via Email</button>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <div>© <strong>Mohamed Mostafa</strong> — Document Control & Planning. <span class="muted">Built as single-file portfolio</span></div>
+  </footer>
+</div>
+
+<script>
+const sendBtn = document.getElementById('sendMailBtn');
+sendBtn.addEventListener('click', () => {
+  const name = document.getElementById('name').value.trim();
+  const from = document.getElementById('email').value.trim();
+  const msg = document.getElementById('message').value.trim();
+  const subject = encodeURIComponent(name ? `Contact from ${name}` : 'Contact from Portfolio');
+  let body = '';
+  if (from) body += `Reply to: ${from}\n\n`;
+  if (msg) body += msg;
+  const mailto = `mailto:muhammadmostafa1580@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+});
+
+document.getElementById('previewBtn').addEventListener('click', () => {
+  const name = document.getElementById('name').value.trim() || '(No name)';
+  const from = document.getElementById('email').value.trim() || '(No email)';
+  const msg = document.getElementById('message').value.trim() || '(No message)';
+  alert(`Preview:\nName: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`);
+});
+</script>
 </body>
 </html>
