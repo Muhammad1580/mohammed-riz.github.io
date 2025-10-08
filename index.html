@@ -8,7 +8,6 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ================== Theme (Light: Gold & Beige) ================== */
     :root {
       --bg:#f7f4ef;
       --card:#ffffff;
@@ -28,68 +27,12 @@
       background: var(--bg);
       color: var(--text);
       margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: var(--maxw);
-      margin: 60px auto;
-      padding: 20px;
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    /* ===== Profile Image ===== */
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 20px;
-      display: block;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border: 3px solid var(--gold-2);
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img src="profile.jpg" alt="Mohamed Mostafa" class="profile-photo">
-    <h1>Mohamed Mostafa</h1>
-    <p>Document Controller & Planning Coordinator</p>
-  </div>
-</body>
-</html>
-
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Poppins", "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, var(--bg), #fbf9f6 120%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      padding: 30px 18px;
       line-height:1.5;
-      padding:30px 18px;
     }
-    .container{max-width:var(--maxw);margin:0 auto}
 
-    /* Header */
+    .container { max-width: var(--maxw); margin:0 auto; }
+
     header.site-header{
       display:flex;
       justify-content:space-between;
@@ -97,222 +40,139 @@
       gap:18px;
       margin-bottom:22px;
     }
-    .brand{
-      display:flex;
-      gap:14px;
-      align-items:center;
-    }
+    .brand{display:flex; gap:14px; align-items:center;}
     .logo{
-      width:68px;height:68px;border-radius:12px;
+      width:68px; height:68px; border-radius:12px;
       background:linear-gradient(135deg,var(--gold),var(--gold-2));
-      display:flex;align-items:center;justify-content:center;
-      color:white;font-weight:700;font-size:20px;
+      display:flex; align-items:center; justify-content:center;
+      color:white; font-weight:700; font-size:20px;
       box-shadow:0 6px 18px rgba(168,130,66,0.18);
     }
     .brand h1{margin:0;font-size:20px}
     .brand p{margin:0;font-size:13px;color:var(--muted)}
 
-    /* Nav buttons */
-    nav.top-nav{display:flex;gap:10px;align-items:center}
+    nav.top-nav{display:flex; gap:10px; align-items:center}
     .btn{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:10px 14px;border-radius:10px;border:1px solid rgba(38,33,30,0.06);
+      display:inline-flex; gap:8px; align-items:center;
+      padding:10px 14px; border-radius:10px; border:1px solid rgba(38,33,30,0.06);
       background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,244,239,0.9));
       color:var(--text); text-decoration:none; font-weight:600; font-size:14px;
       box-shadow:var(--shadow);
     }
     .btn.primary{
       background:linear-gradient(180deg,var(--gold),var(--gold-2));
-      color:#fff;border:none;box-shadow:0 10px 30px rgba(168,130,66,0.18);
-    }
-    .icon{width:18px;height:18px;display:inline-block}
-
-    /* Main layout */
-    .hero{
-      display:grid;
-      grid-template-columns: 260px 1fr;
-      gap:20px;
-      background:var(--card);
-      padding:22px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      align-items:start;
+      color:#fff; border:none; box-shadow:0 10px 30px rgba(168,130,66,0.18);
     }
 
-    /* Profile column */
-    .profile{
-      text-align:center;
-    }
-    .avatar{
+    .hero{display:grid; grid-template-columns:260px 1fr; gap:20px; background:var(--card); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow); align-items:start;}
+    .profile{text-align:center;}
+    .avatar img{
       width:200px;height:200px;border-radius:18px;overflow:hidden;border:6px solid #fff;
       box-shadow:0 12px 30px rgba(38,33,30,0.06);
-      margin:0 auto 12px;
-      background:linear-gradient(180deg,var(--accent), #fff);
-      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 12px; display:block;
     }
-    .avatar svg{width:100%;height:100%}
     .contact-chips{display:flex;flex-direction:column;gap:10px;margin-top:12px}
     .chip{padding:10px;border-radius:10px;background:var(--glass);font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.03)}
 
-    /* Details column */
     .details h2{margin:0;font-size:22px}
     .details p.lead{color:var(--muted);margin:8px 0 14px;font-size:14px}
     .meta-list{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
     .meta{background:linear-gradient(180deg, #fff,#fbf7f1);padding:8px 10px;border-radius:10px;border:1px solid rgba(38,33,30,0.04);font-size:13px;color:var(--muted)}
 
-    /* Sections */
     section.sec{margin-top:18px}
     .sec h3{margin:0 0 12px 0;font-size:18px;color:var(--text)}
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-    }
-    .card-item{
-      border-radius:12px;padding:14px;background:linear-gradient(180deg,#fff,#faf6f0);box-shadow:0 8px 22px rgba(38,33,30,0.04);border:1px solid rgba(0,0,0,0.03);
-    }
+    .projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .card-item{border-radius:12px; padding:14px; background:linear-gradient(180deg,#fff,#faf6f0); box-shadow:0 8px 22px rgba(38,33,30,0.04); border:1px solid rgba(0,0,0,0.03);}
     .card-item h4{margin:0 0 6px;font-size:16px}
     .card-item p{margin:0;color:var(--muted);font-size:13px}
     .tech{margin-top:10px;font-size:12px;color:var(--muted)}
-
-    /* Skills */
     .skills{display:flex;flex-wrap:wrap;gap:10px}
     .skill{padding:8px 10px;border-radius:10px;background:linear-gradient(180deg,#fff,#faf6f0);font-size:13px;border:1px solid rgba(0,0,0,0.03);color:var(--muted)}
-
-    /* Contact form (simple, non-submitting; opens mailto) */
     .contact-card{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#faf6f0);border:1px solid rgba(0,0,0,0.03)}
     .field{display:flex;flex-direction:column;gap:6px}
     label{font-size:13px;color:var(--muted)}
-    input[type="text"], textarea{
-      padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-size:14px;background:transparent;color:var(--text)
-    }
+    input[type="text"], textarea{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-size:14px;background:transparent;color:var(--text)}
     textarea{min-height:110px;resize:vertical}
-
-    /* footer */
     footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; padding:16px}
-      .projects-grid{grid-template-columns:1fr}
-      .avatar{width:160px;height:160px}
-      nav.top-nav{display:none}
-    }
-    @media (max-width:560px){
-      body{padding:18px 12px}
-      .logo{width:56px;height:56px}
-    }
-
-    /* small helpers */
+    @media (max-width:900px){.hero{grid-template-columns:1fr; padding:16px}.projects-grid{grid-template-columns:1fr}.avatar img{width:160px;height:160px}nav.top-nav{display:none}}
+    @media (max-width:560px){body{padding:18px 12px}.logo{width:56px;height:56px}}
     a.link{color:var(--gold);text-decoration:none;font-weight:600}
     .muted{color:var(--muted)}
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="site-header" role="banner">
-      <div class="brand" aria-label="Brand">
+    <header class="site-header">
+      <div class="brand">
         <div class="logo">MM</div>
         <div>
           <h1>Mohamed Mostafa Abdel-Khalik</h1>
           <p>Document Controller • Planning Coordinator</p>
         </div>
       </div>
-
-      <!-- Top nav (hidden on mobile) -->
-      <nav class="top-nav" role="navigation" aria-label="Main navigation">
+      <nav class="top-nav">
         <a class="btn" href="#about">About</a>
         <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="#skills">Skills</a>
         <a class="btn" href="#contact">Contact</a>
-        <!-- Gmail button -->
-        <a class="btn" id="gmailTop" href="mailto:muhammadmostafa1580@gmail.com">
-          <span class="icon" aria-hidden="true">✉️</span> Gmail
-        </a>
-        <!-- LinkedIn button -->
-        <a class="btn primary" id="linkedinTop" href="https://www.linkedin.com/in/replace-with-your-profile" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">in</span> LinkedIn
-        </a>
+        <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Gmail</a>
+        <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
       </nav>
     </header>
 
-    <!-- Hero / main card -->
-    <main class="hero" role="main">
-      <!-- Left: profile -->
-      <aside class="profile" aria-label="Profile">
-        <div class="avatar" title="Profile photo">
-          <!-- Inline SVG placeholder; replace with <img src="your-photo.jpg"> if you have a photo -->
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#f6efe6"/>
-                <stop offset="1" stop-color="#fff8f0"/>
-              </linearGradient>
-            </defs>
-            <rect width="200" height="200" rx="20" fill="url(#g)"/>
-            <g transform="translate(30,32)" fill="#d9c6a6">
-              <circle cx="70" cy="42" r="34" fill="#e9dcc1"/>
-              <rect x="18" y="86" width="104" height="54" rx="14" fill="#efe4cc"/>
-            </g>
-            <text x="100" y="185" font-size="10" text-anchor="middle" fill="#b8873a" font-weight="700">Your Photo</text>
-          </svg>
+    <main class="hero">
+      <aside class="profile">
+        <div class="avatar">
+          <img src="profile.jpg" alt="Mohamed Mostafa">
         </div>
-
         <div style="margin-top:12px">
           <div style="font-weight:600">Mohamed Mostafa</div>
           <div class="muted" style="font-size:13px">Document Controller • Planning Coordinator</div>
         </div>
-
         <div class="contact-chips" style="margin-top:14px">
           <a class="chip" href="tel:01129231117">📞 +20 01129231117</a>
           <a class="chip" href="mailto:muhammadmostafa1580@gmail.com">✉️ muhammadmostafa1580@gmail.com</a>
+          <a class="chip" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
           <div class="chip">DOB: Aug 15, 1997</div>
         </div>
       </aside>
 
-      <!-- Right: details -->
       <section class="details">
         <h2>Professional Summary</h2>
         <p class="lead">Highly organized Document Controller with 3+ years’ experience in engineering and real estate. Skilled in documentation systems, project coordination, Excel & Power BI dashboards, and ensuring timely document flow across multidisciplinary teams.</p>
-
-        <div class="meta-list" aria-hidden="true">
+        <div class="meta-list">
           <div class="meta">Education: B.Com — Al-Azhar University (2019)</div>
           <div class="meta">Languages: English (Good) • Arabic (Native)</div>
           <div class="meta">Location: Egypt</div>
         </div>
 
-        <!-- About Section -->
-        <section id="about" class="sec" aria-labelledby="aboutTitle">
-          <h3 id="aboutTitle">About</h3>
+        <section id="about" class="sec">
+          <h3>About</h3>
           <div class="card-item">
             <p class="muted">I work across project teams to maintain accurate document archives, prepare submission trackers, and produce dashboard reports that help managers meet deadlines and avoid cost risks. I enjoy turning chaotic paperwork into reliable systems.</p>
           </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="sec" aria-labelledby="projectsTitle">
-          <h3 id="projectsTitle">Selected Projects</h3>
+        <section id="projects" class="sec">
+          <h3>Selected Projects</h3>
           <div class="projects-grid">
-            <article class="card-item" tabindex="0">
+            <article class="card-item">
               <h4>Project Tracker Dashboard</h4>
               <p>Designed Excel + Power BI dashboard to monitor engineer performance, submittal timelines and project progress across 20+ projects.</p>
               <div class="tech">Excel • Power BI • DAX</div>
             </article>
-
-            <article class="card-item" tabindex="0">
+            <article class="card-item">
               <h4>Document Control System</h4>
               <p>Developed filing structure, templates and transmittal procedures to standardize document flow between consultants and contractors.</p>
-              <div class="tech">MS Office • SharePoint (templates)</div>
+              <div class="tech">MS Office • SharePoint</div>
             </article>
-
-            <article class="card-item" tabindex="0">
+            <article class="card-item">
               <h4>Procurement Submittal Tracker</h4>
               <p>Created master procurement tracker to reduce delivery delays and track approvals for materials and shop drawings.</p>
               <div class="tech">Excel • Reporting</div>
             </article>
-
-            <article class="card-item" tabindex="0">
+            <article class="card-item">
               <h4>Social Media Reporting</h4>
               <p>Managed content and ad campaigns remotely, producing engagement and performance reports for stakeholders.</p>
               <div class="tech">Analytics • Meta Ads</div>
@@ -320,9 +180,8 @@
           </div>
         </section>
 
-        <!-- Skills -->
-        <section id="skills" class="sec" aria-labelledby="skillsTitle">
-          <h3 id="skillsTitle">Skills</h3>
+        <section id="skills" class="sec">
+          <h3>Skills</h3>
           <div class="card-item">
             <div class="skills">
               <div class="skill">Document Management</div>
@@ -336,31 +195,20 @@
           </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="sec" aria-labelledby="contactTitle">
-          <h3 id="contactTitle">Contact</h3>
+        <section id="contact" class="sec">
+          <h3>Contact</h3>
           <div class="card-item contact-card">
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <a class="btn" href="tel:01129231117">📞 Call</a>
-              <a class="btn" id="gmailBottom" href="mailto:muhammadmostafa1580@gmail.com">✉️ Email</a>
-              <a class="btn primary" id="linkedinBottom" href="https://www.linkedin.com/in/replace-with-your-profile" target="_blank" rel="noopener">🔗 LinkedIn</a>
+              <a class="btn" href="mailto:muhammadmostafa1580@gmail.com">✉️ Email</a>
+              <a class="btn primary" href="https://www.linkedin.com/in/muhammad-mostafa-590407227" target="_blank">🔗 LinkedIn</a>
             </div>
-
             <div class="muted" style="font-size:13px;margin-top:6px">Or send a quick message:</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name">
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="text" placeholder="your@mail.com">
-              </div>
+              <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name"></div>
+              <div class="field"><label for="email">Email</label><input id="email" type="text" placeholder="your@mail.com"></div>
             </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Short message..."></textarea>
-            </div>
+            <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Short message..."></textarea></div>
             <div style="display:flex;gap:10px;justify-content:flex-end">
               <button class="btn" id="previewBtn">Preview</button>
               <button class="btn primary" id="sendMailBtn">Send via Email</button>
@@ -375,14 +223,7 @@
     </footer>
   </div>
 
-  <!-- Inline JS (interactions) -->
   <script>
-    // Replace LinkedIn placeholders easily: update these to your profile URL
-    const linkedinURL = "https://www.linkedin.com/in/replace-with-your-profile";
-    document.getElementById('linkedinTop').href = linkedinURL;
-    document.getElementById('linkedinBottom').href = linkedinURL;
-
-    // Mail composer from contact form: builds mailto with subject/body
     const sendBtn = document.getElementById('sendMailBtn');
     sendBtn.addEventListener('click', () => {
       const name = document.getElementById('name').value.trim();
@@ -396,25 +237,12 @@
       window.location.href = mailto;
     });
 
-    // Preview button shows the composed message in an alert (quick UX)
     document.getElementById('previewBtn').addEventListener('click', () => {
       const name = document.getElementById('name').value.trim() || '(No name)';
       const from = document.getElementById('email').value.trim() || '(No email)';
       const msg = document.getElementById('message').value.trim() || '(No message)';
       alert(`Preview:\nName: ${name}\nEmail: ${from}\n\nMessage:\n${msg}`);
     });
-
-    // Small keyboard accessibility: press "p" to focus projects
-    document.addEventListener('keydown', (e) => {
-      if (e.key.toLowerCase() === 'p') {
-        const el = document.getElementById('projectsTitle');
-        if (el) el.scrollIntoView({behavior:'smooth', block:'center'});
-      }
-    });
-
-    // Optional: quick function to replace avatar with user's image (drag-drop not implemented)
-    // To replace: in the HTML replace the <svg> inside .avatar with: <img src="path/to/your-photo.jpg" alt="Profile photo">
   </script>
 </body>
 </html>
-
